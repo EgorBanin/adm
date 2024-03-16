@@ -1,0 +1,7 @@
+<form method="<?= htmlspecialchars($method) ?>" action="<?= htmlspecialchars($action) ?>">
+	<?php foreach ($this->fields as $name => $field): ?>
+		<div>
+			<?= $field->input($name) ?>
+		</div>
+	<?php endforeach ?>
+</form>

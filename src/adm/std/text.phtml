@@ -1,0 +1,15 @@
+<?php if ($this->multiline): ?>
+	<textarea
+		id="<?= htmlspecialchars($name) ?>"
+		name="<?= htmlspecialchars($name) ?>"
+		<?= $readonly? 'readonly' : '' ?>
+	><?= htmlspecialchars($value) ?></textarea>
+<?php else: ?>
+	<input
+		type="text"
+		id="<?= htmlspecialchars($name) ?>"
+		name="<?= htmlspecialchars($name) ?>"
+		value="<?= htmlspecialchars($value) ?>"
+		<?= $readonly? 'readonly' : '' ?>
+	>
+<?php endif ?>

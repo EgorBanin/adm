@@ -1,0 +1,10 @@
+select
+`tables`.`table_name`,
+`tables`.`table_comment`,
+`columns`.`column_name`,
+`columns`.`data_type`,
+`columns`.`is_nullable`
+from `information_schema`.`tables`
+inner join `information_schema`.`columns`
+on `columns`.`table_name` = `tables`.`table_name`
+where `tables`.`table_schema` = schema()

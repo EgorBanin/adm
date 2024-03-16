@@ -1,0 +1,15 @@
+services:
+
+    mysql:
+      image: mysql
+      environment:
+        MYSQL_DATABASE: adm
+        MYSQL_USER: adm
+        MYSQL_PASSWORD: passw0rd
+        MYSQL_RANDOM_ROOT_PASSWORD: true
+      volumes:
+        - ./mysql/adm.cnf:/etc/mysql/conf.d/adm.cnf:ro
+        - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+        - ./mysql/data:/var/lib/mysql
+      ports:
+        - 3306:3306
